@@ -25,7 +25,7 @@ class Product(Base):
         return self.name
 
 
-def pre_save_produto(signal, instance, sender, **kwargs):
+def pre_save_produto(signal, instance, sender, **kwargs):  # noqa
     instance.slug = slugify(instance.name)
 
 
