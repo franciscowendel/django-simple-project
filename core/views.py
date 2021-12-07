@@ -2,10 +2,14 @@ from django.shortcuts import render
 from .forms import ContactForm, ProductModelForm
 from django.contrib import messages
 from django.shortcuts import redirect
+from .models import Product
 
 
 def index(request):
-    return render(request, 'index.html')
+    context = {
+        'products': Product.objects.all() # noqa
+    }
+    return render(request, 'index.html', context)
 
 
 def contact(request):
