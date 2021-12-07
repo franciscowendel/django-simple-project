@@ -23,3 +23,7 @@ class Product(Base):
 
     def __str__(self):
         return self.name
+
+
+def pre_save_produto(signal, instance, sender, **kwargs):
+    instance.slug = slugify(instance.name)
