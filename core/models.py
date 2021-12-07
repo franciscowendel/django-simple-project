@@ -1,6 +1,9 @@
 from django.db import models
 from stdimage.models import StdImageField
 
+from django.db.models import signals
+from django.template.defaultfilters import slugify
+
 
 class Base(models.Model):
     created_at = models.DateField('Created', auto_now_add=True)
