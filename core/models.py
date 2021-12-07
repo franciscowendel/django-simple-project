@@ -27,3 +27,6 @@ class Product(Base):
 
 def pre_save_produto(signal, instance, sender, **kwargs):
     instance.slug = slugify(instance.name)
+
+
+signals.pre_save.connect(pre_save_produto, sender=Product)
