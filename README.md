@@ -17,7 +17,7 @@ pip install -r requirements.txt
 
 <br>
 
-3. Fazer as migrações necessárias pro projeto:
+3. Faça as migrações necessárias pro projeto:
 ```sudo
 python manage.py makemigrations
 ```
