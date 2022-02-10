@@ -101,7 +101,7 @@ class UserAdmin(admin.ModelAdmin):
             raise PermissionDenied
         if extra_context is None:
             extra_context = {}
-        username_field = self.model._meta.get_field(self.model.USERNAME_FIELD)
+        username_field = self.model._meta.get_field(self.model.USERNAME_FIELD)  # noqa
         defaults = {
             'auto_populated_fields': (),
             'username_help_text': username_field.help_text,
@@ -110,13 +110,13 @@ class UserAdmin(admin.ModelAdmin):
         return super().add_view(request, form_url, extra_context)
 
     @sensitive_post_parameters_m
-    def user_change_password(self, request, id, form_url=''):
+    def user_change_password(self, request, id, form_url=''):  # noqa
         user = self.get_object(request, unquote(id))
         if not self.has_change_permission(request, user):
             raise PermissionDenied
         if user is None:
             raise Http404(_('%(name)s object with primary key %(key)r does not exist.') % {
-                'name': self.model._meta.verbose_name,
+                'name': self.model._meta.verbose_name,  # noqa
                 'key': escape(id),
             })
         if request.method == 'POST':
@@ -132,8 +132,8 @@ class UserAdmin(admin.ModelAdmin):
                     reverse(
                         '%s:%s_%s_change' % (
                             self.admin_site.name,
-                            user._meta.app_label,
-                            user._meta.model_name,
+                            user._meta.app_label,  # noqa
+                            user._meta.model_name,   # noqa
                         ),
                         args=(user.pk,),
                     )
@@ -142,7 +142,7 @@ class UserAdmin(admin.ModelAdmin):
             form = self.change_password_form(user)
 
         fieldsets = [(None, {'fields': list(form.base_fields)})]
-        adminForm = admin.helpers.AdminForm(form, fieldsets, {})
+        adminForm = admin.helpers.AdminForm(form, fieldsets, {})  # noqa
 
         context = {
             'title': _('Change password: %s') % escape(user.get_username()),
@@ -156,7 +156,7 @@ class UserAdmin(admin.ModelAdmin):
             'has_delete_permission': False,
             'has_change_permission': True,
             'has_absolute_url': False,
-            'opts': self.model._meta,
+            'opts': self.model._meta,  # noqa
             'original': user,
             'save_as': False,
             'show_save': True,
