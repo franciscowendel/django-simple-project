@@ -18,7 +18,7 @@ class Product(Base):
     name = models.CharField('Name', max_length=100)
     price = models.DecimalField('Price', max_digits=8, decimal_places=2)
     stock = models.IntegerField('Stock')
-    image = StdImageField('Image', upload_to='products', variations={'thumb': {'width': 480, 'height': 480}})
+    image = StdImageField('Image', upload_to='products', variations={'thumb': {'width': 200, 'height': 200}})
     slug = models.SlugField('Slug', max_length=150, blank=True, editable=False)
 
     def __str__(self):
