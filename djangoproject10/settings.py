@@ -146,7 +146,7 @@ EMAIL_HOST = 'localhost'
 EMAIL_HOST_USER = 'youremail@yourdomain.com'
 EMAIL_PORT = 587
 EMAIL_USE_TSL = True
-EMAIL_HOST_PASSOWORD = 'yourpassword'
+EMAIL_HOST_PASSWORD = 'yourpassword'
 """
 
 # Default primary key field type
