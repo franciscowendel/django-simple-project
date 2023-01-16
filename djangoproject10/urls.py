@@ -19,6 +19,15 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
+    # DJANGO
     path('admin/', admin.site.urls),
+
+    # CORE
     path('', include('core.urls')),
+
+    # DJANGO REST FRAMEWORK
+    path('auth/', include('rest_framework.urls')),
+
+    # API (1) com APIView
+    path('api/v1/', include('core.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
