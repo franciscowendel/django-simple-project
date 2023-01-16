@@ -3,7 +3,9 @@ from .views import \
     index, \
     contact, \
     product, \
-    ProductAPIView
+    ProductAPIView, \
+    ProductsGenericsAPIView, \
+    ProductGenericAPIView
 
 
 urlpatterns = [
@@ -12,4 +14,7 @@ urlpatterns = [
     path('product/', product, name='product'),
 
     path('products/', ProductAPIView.as_view(), name='products'),
+
+    path('products/2/', ProductsGenericsAPIView.as_view(), name='products_2'),
+    path('products/<int:pk>/', ProductGenericAPIView.as_view(), name='products_2_product'),
 ]
