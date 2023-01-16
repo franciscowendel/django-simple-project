@@ -8,6 +8,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import generics
+from rest_framework import viewsets
 
 
 def index(request):
@@ -78,5 +79,11 @@ class ProductsGenericsAPIView(generics.ListCreateAPIView):
 
 
 class ProductGenericAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Product.objects.all()  # noqa
+    serializer_class = ProductSerializer
+
+
+# VIEWSETS
+class ProductViewSets(viewsets.ModelViewSet):
     queryset = Product.objects.all()  # noqa
     serializer_class = ProductSerializer

@@ -5,8 +5,14 @@ from .views import \
     product, \
     ProductAPIView, \
     ProductsGenericsAPIView, \
-    ProductGenericAPIView
+    ProductGenericAPIView, \
+    ProductViewSets
 
+from rest_framework.routers import SimpleRouter
+
+router = SimpleRouter()
+
+router.register('products', ProductViewSets)
 
 urlpatterns = [
     path('', index, name='index'),
