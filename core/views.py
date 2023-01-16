@@ -3,6 +3,10 @@ from .forms import ContactForm, ProductModelForm
 from django.contrib import messages
 from django.shortcuts import redirect
 from .models import Product
+from core.serializers import ProductSerializer
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
 
 
 def index(request):
@@ -50,3 +54,17 @@ def product(request):
 
     else:
         return redirect('index')
+
+
+# APIView
+class ProductAPIView(APIView):
+    def get(self, request):  # noqa
+        products = Product.objects.all()  # noqa
+        serializer = ProductSerializer(products, many=True)
+        return Response(serializer.data)
+
+    def post(self, request):  # noqa
+        serializer = ProductSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
