@@ -140,6 +140,25 @@ LOGOUT_REDIRECT_URL = 'index'
 # Envio de email local
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ),
+    'DEFAULT_PAGINATION_CLASSE': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 2,
+    'DEFAULT_THROTTLE_CLASSES': (
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle',
+    ),
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '10/min',
+        'user': '20/min',
+    }
+}
+
 # Envio de email em produção
 """
 EMAIL_HOST = 'localhost'
