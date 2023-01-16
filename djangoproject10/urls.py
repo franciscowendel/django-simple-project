@@ -30,4 +30,8 @@ urlpatterns = [
 
     # API (1) com APIView
     path('api/v1/', include('core.urls')),
+
+    # API (2) com Generics
+    path('api/v2/', include('core.urls')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
