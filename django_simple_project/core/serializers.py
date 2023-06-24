@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from core.models import Product
+from django_simple_project.core.models import Product
 
 
 class ProductSerializer(serializers.ModelSerializer):

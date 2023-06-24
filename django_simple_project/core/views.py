@@ -3,7 +3,7 @@ from .forms import ContactForm, ProductModelForm
 from django.contrib import messages
 from django.shortcuts import redirect
 from .models import Product
-from core.serializers import ProductSerializer
+from django_simple_project.core.serializers import ProductSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
