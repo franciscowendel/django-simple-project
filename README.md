@@ -40,7 +40,13 @@ python manage.py runserver
 
 <br>
 
-6. URLs of the project:
+6. Login to the admin:
+- http://127.0.0.1:8000/admin
+
+
+<br>
+
+7. URLs of the project:
 
 
 - index: show all the registered products. http://127.0.0.1:8000/
@@ -51,17 +57,12 @@ python manage.py runserver
 
 - product: product registration form (you need to be logged in!). http://127.0.0.1:8000/product_registration
 
-6. API URLs:
+API URLs:
 - API of all products: http://127.0.0.1:8000/api/v2/products/
 - API of one especific product: http://127.0.0.1:8000/api/v2/products/1
 
 
 <br>
 
-
-7. Login to the admin:
-- http://127.0.0.1:8000/admin
-
-<br>
 
 8. Use the project!
