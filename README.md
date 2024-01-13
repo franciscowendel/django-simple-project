@@ -1,23 +1,23 @@
 # Django Simple Project
-_Just a simple Django project where you can save products (Name, Price, Stock and Image) in the database. API of products included!_
+*A simple Django project* where you can save products (Name, Price, Stock and Image) in the database; API of products included.
 
-**Como executar o projeto:**
+**How execute the project:**
 
-1. Instale os pacotes necessários pro projeto funcionar:
+1. Install all dependencies for the project to work:
 ```pip
 pip install -r requirements.txt
 ```
 
 <br>
 
-2. Crie o arquivo _.env_ e adicione as seguintes variáveis de ambiente:
+2. Create the file **.env** and the variables below:
 - DEBUG = True
 - ALLOWED_HOSTS = localhost,127.0.0.1
 - SECRET_KEY = 'yourkey'
 
 <br>
 
-3. Faça as migrações necessárias pro projeto:
+3. Make the necessary migrations for the project:
 ```sudo
 python manage.py makemigrations
 ```
@@ -27,36 +27,36 @@ python manage.py migrate
 
 <br> 
 
-4. Crie um super usuário:
+4. Create a superuser:
 ```sudo
 python manage.py createsuperuser
 ```
 <br>
 
-5. Rode o servidor:
+5. Run the server:
 ```sudo
 python manage.py runserver
 ```
 
 <br>
 
-6. URLs existentes no projeto:
+6. URLs of the project:
 
 
-- index: mostra todos os produtos cadastrados. http://127.0.0.1:8000/
+- index: show all the registered products. http://127.0.0.1:8000/
 
 
-- contact: formulário de envio de email. http://127.0.0.1:8000/contact
+- contact: email submission form. http://127.0.0.1:8000/contact
 
 
-- product: formulário de cadastro de produto (precisa estar logado no admin do Django). http://127.0.0.1:8000/product
+- product: product registration form (you need to be logged in!). http://127.0.0.1:8000/product
 
 <br>
 
 
-7. Entre no admin do projeto:
+7. Log in to the admin:
 - http://127.0.0.1:8000/admin
 
 <br>
 
-8. Use o projeto.
+8. Use the project!
