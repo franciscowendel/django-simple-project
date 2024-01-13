@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-from django_simple_project.core.urls import router
+from django_simple_project.core.urls_2 import router
 
 
 urlpatterns = [
@@ -31,10 +31,10 @@ urlpatterns = [
     path('auth/', include('rest_framework.urls')),
 
     # API (1) com APIView
-    path('api/v1/', include('django_simple_project.core.urls')),
+    path('api/v1/', include('django_simple_project.core.urls_2')),
 
     # API (2) com Generics
-    path('api/v2/', include('django_simple_project.core.urls')),
+    path('api/v2/', include('django_simple_project.core.urls_2')),
 
     # API (3) com Viewsets
     path('api/v3/', include(router.urls)),
