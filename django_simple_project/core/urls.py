@@ -3,7 +3,6 @@ from .views import \
     index, \
     contact, \
     product, \
-    ProductViewSets
 
 urlpatterns = [
     path('', index, name='index'),
