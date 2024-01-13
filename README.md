@@ -1,5 +1,5 @@
 # Django Simple Project
-*A simple Django project* where you can save products (Name, Price, Stock and Image) in the database; API of products included.
+*A simple Django project* where user can save products (Name, Price, Stock and Image) in the database; API of products included.
 
 **How execute the project:**
 
