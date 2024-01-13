@@ -51,10 +51,15 @@ python manage.py runserver
 
 - product: product registration form (you need to be logged in!). http://127.0.0.1:8000/product_registration
 
+6. API URLs:
+- API of all products: http://127.0.0.1:8000/api/v2/products/
+- API of one especific product: http://127.0.0.1:8000/api/v2/products/product_id
+
+
 <br>
 
 
-7. Log in to the admin:
+7. Login to the admin:
 - http://127.0.0.1:8000/admin
 
 <br>
