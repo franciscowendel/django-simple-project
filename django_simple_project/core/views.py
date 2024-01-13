@@ -52,7 +52,7 @@ def product(request):
         context = {
             'form': form,
         }
-        return render(request, 'product.html', context)
+        return render(request, 'product_registration.html', context)
 
     else:
         return redirect('index')
