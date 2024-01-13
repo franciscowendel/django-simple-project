@@ -24,22 +24,22 @@ from django_simple_project.core.urls_3 import router
 
 
 urlpatterns = [
-    # DJANGO
+    # DJANGO ADMIN
     path('admin/', admin.site.urls),
 
-    # CORE
+    # CORE URLS
     path('', include('django_simple_project.core.urls')),
 
-    # DJANGO REST FRAMEWORK
+    # DJANGO REST FRAMEWORK ADMIN
     path('auth/', include('rest_framework.urls')),
 
-    # API (1) com APIView
+    # API (1) APIView
     path('api/v1/', include('django_simple_project.core.urls_2')),
 
-    # API (2) com Generics
+    # API (2) Generics
     path('api/v2/', include('django_simple_project.core.urls_3')),
 
-    # API (3) com Viewsets
+    # API (3) Viewsets
     path('api/v3/', include(router.urls)),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
