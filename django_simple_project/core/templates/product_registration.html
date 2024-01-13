@@ -3,12 +3,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Product Registration</title>
     {% bootstrap_css %}
 </head>
 <body>
     <div class=container>
-    <h1>Product</h1>
+    <h1>Product Registration</h1>
         <br>
         <form action="{% url 'product' %}" method="post" class="form" autocomplete="off" enctype="multipart/form-data">
             {% csrf_token %}
