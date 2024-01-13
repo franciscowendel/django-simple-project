@@ -14,10 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import (
+    path,
+    include
+)
 from django.conf.urls.static import static
 from django.conf import settings
-from django_simple_project.core.urls_2 import router
+from django_simple_project.core.urls_3 import router
 
 
 urlpatterns = [
@@ -34,7 +37,7 @@ urlpatterns = [
     path('api/v1/', include('django_simple_project.core.urls_2')),
 
     # API (2) com Generics
-    path('api/v2/', include('django_simple_project.core.urls_2')),
+    path('api/v2/', include('django_simple_project.core.urls_3')),
 
     # API (3) com Viewsets
     path('api/v3/', include(router.urls)),

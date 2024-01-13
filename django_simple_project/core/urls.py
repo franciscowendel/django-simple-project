@@ -2,7 +2,7 @@ from django.urls import path
 from .views import (
     index, 
     contact, 
-    product, 
+    product,
 )
 
 urlpatterns = [
