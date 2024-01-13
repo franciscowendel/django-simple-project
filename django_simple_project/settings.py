@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'stdimage',
     'bootstrap4',
 
+    'rest_framework',
+
 ]
 
 AUTH_USER_MODEL = 'custom_user.User'
@@ -139,12 +141,24 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
 LOGOUT_REDIRECT_URL = 'index'
 
-# Envio de email local
+# Local email config:
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Production email config:
+"""
+EMAIL_HOST = 'localhost'
+EMAIL_HOST_USER = 'youremail@yourdomain.com'
+EMAIL_PORT = 587
+EMAIL_USE_TSL = True
+EMAIL_HOST_PASSWORD = 'yourpassword'
+
+DEFAULT_FROM_EMAIL = 'youremail'
+"""
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.TokenAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
@@ -160,15 +174,6 @@ REST_FRAMEWORK = {
         'user': '20/min',
     }
 }
-
-# Envio de email em produção
-"""
-EMAIL_HOST = 'localhost'
-EMAIL_HOST_USER = 'youremail@yourdomain.com'
-EMAIL_PORT = 587
-EMAIL_USE_TSL = True
-EMAIL_HOST_PASSWORD = 'yourpassword'
-"""
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
