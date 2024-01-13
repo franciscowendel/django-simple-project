@@ -49,7 +49,7 @@ python manage.py runserver
 - contact: email submission form. http://127.0.0.1:8000/contact
 
 
-- product: product registration form (you need to be logged in!). http://127.0.0.1:8000/product
+- product: product registration form (you need to be logged in!). http://127.0.0.1:8000/product_registration
 
 <br>
 
