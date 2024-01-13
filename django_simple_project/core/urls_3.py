@@ -14,5 +14,5 @@ router.register('products', ProductViewSets)
 
 urlpatterns = [
     path('products/', ProductsGenericsAPIView.as_view(), name='products'),
-    path('products/<int:pk>/', ProductGenericAPIView.as_view(), name='product'),
+    path('products/<int:pk>/', ProductGenericAPIView.as_view(), name='products_product'),
 ]
