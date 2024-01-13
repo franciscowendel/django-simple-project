@@ -42,10 +42,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'core',
+    'django_simple_project.core',
+    'django_simple_project.custom_user',
+
     'stdimage',
     'bootstrap4',
-    'custom_user',
+
 ]
 
 AUTH_USER_MODEL = 'custom_user.User'
