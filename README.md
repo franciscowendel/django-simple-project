@@ -53,7 +53,7 @@ python manage.py runserver
 
 6. API URLs:
 - API of all products: http://127.0.0.1:8000/api/v2/products/
-- API of one especific product: http://127.0.0.1:8000/api/v2/products/product_id
+- API of one especific product: http://127.0.0.1:8000/api/v2/products/1
 
 
 <br>
